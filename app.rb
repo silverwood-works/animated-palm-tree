@@ -20,15 +20,6 @@ class Metric
   end
 end
 
-@metrics = Hash.new { |h,k| h[k] = Metric.new(k) }
-
-
-
-
-
-
-
-
 configure do
   set :port, 8081
   set :bind, '0.0.0.0'
@@ -37,9 +28,9 @@ configure do
 end
 
 before do
-  @metrics[:referer].up request.referer
-  @metrics[:agent].up request.user_agent
-  @metrics[:route].up request.path_info
+  Metric.new(:referer).up request.referer
+  Metric.new(:agent).up request.user_agent
+  Metric.new(:route).up request.path_info
   Redis.new.publish "App.#{request.request_method}", "#{request.fullpath} #{params}"
 end
 

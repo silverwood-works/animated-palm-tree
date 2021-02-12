@@ -9,7 +9,9 @@
   #bg { height: 100vh; width: 100vw; position: fixed; left: 0; top: 0; }
 #icon { width: 100vw; height: 100vh; position: absolute; z-index: 1; top: 100%; left: 0; }
 #title { position: fixed; width: 100%; font-size: xx-large; top: 25%; z-index: 1; }
+#title > h1 { margin: 0; }
 #tag { position: fixed; width: 100%; font-size: large; bottom: -25%; z-index: 1; }
+#links { position: fixed; width: 100%; bottom: -20%; zindex: 1;  }
 #links > a { text-decoration: none; color: orangered; border: thin solid orangered; }
 </style>
 <title>silverwood works</title>
@@ -33,6 +35,7 @@
   <script>
     $("#icon").animate({ top: "0%" }, 3000);
     $("#tag").animate({ bottom: "20%" }, 3300);
+    $("#links").animate({ bottom: "10%" }, 3500);
   </script>
 </body>
 </html>

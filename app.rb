@@ -1,5 +1,33 @@
 require 'sinatra'
-require 'redis'
+require 'redis-objects'
+require 'json'
+
+class Metric
+  include Redis::Objects
+  sorted_set :stat
+  def initialize k
+    @id = k
+  end
+  def id; @id; end
+  def up k
+    self.stat.incr(k)
+  end
+  def dn k
+    self.stat.decr(k)
+  end
+  def to_h
+    self.stat.members(with_scores: true).to_h
+  end
+end
+
+@metrics = Hash.new { |h,k| h[k] = Metric.new(k) }
+
+
+
+
+
+
+
 
 configure do
   set :port, 8081

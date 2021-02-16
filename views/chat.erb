@@ -14,13 +14,19 @@
 
     <!-- include -->
     <video class="remote-video" autoplay></video>
-    <input type="text" id="myid" value="<%= params[:id] %>" />
-    <input type="text" id="myid" value="<%= params[:call] %>" />
-    <input type="text" id="" />
-    <button onclick="send();">send</button>
+    <div id="connect">
+    <input type="text" id="meid" value="<%= params[:id] %>" disabled/>
+    <input type="text" id="youid" value="<%= params[:call] %>" disabled/>
     <button onclick="connect();">connect</button>
-    <div class="messages"></div>
-
-    
+    </div>
+    <div id="chat">
+      <video class="remote-video" autoplay></video>
+      <h1>
+	<input type="text" id="" />
+	<button onclick="send();">send</button>
+      </h1>
+      <div class="messages"></div>
+    </div
+      
   </body>
 </html>

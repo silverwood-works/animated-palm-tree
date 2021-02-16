@@ -20,12 +20,12 @@ var events = {
     'progress': function(e) { console.log(e); },
     'failed': function(e) { console.log(e); },
     'ended': function(e) { console.log(e); },
-    'confirmed': function(e) { console.log(e); }
+    'confirmed': function(e) { console.log(e); },
 };
 var opts = {
-    'eventHandlers': events,
+    'eventHandlers': events
     'mediaConstraints': { 'audio': true, 'video': true }
 };
-coolPhone.sendMessage('sip:<%= params[:to] %>@vango.me', "hello, world!", opts);
+coolPhone.sendMessage('sip:<>@vango.me', "hello, world!", opts);
 var call = coolPhone.call('sip:<%= params[:to] %>@vango.me', opts);
 </script>

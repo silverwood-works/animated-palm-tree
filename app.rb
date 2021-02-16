@@ -37,7 +37,9 @@ end
 get '/' do
   erb :index
 end
-
+get '/chat' do
+  erb :chat
+end
 not_found do
   h = {
     method: request.request_method,

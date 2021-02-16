@@ -37,8 +37,8 @@ end
 get '/' do
   erb :index
 end
-get '/call' do
-  erb :call
+get '/x' do
+  erb :chat
 end
 not_found do
   h = {

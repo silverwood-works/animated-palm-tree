@@ -19,7 +19,8 @@ let renderVideo = (stream) => {
 };
 
 // Register with the peer server
-let peer = new Peer(meEl.value);
+let meId = meEl.value;
+let peer = new Peer(meId);
 peer.on('open', (id) => {
     logMessage('My peer ID is: ' + id);
 });
@@ -52,8 +53,7 @@ peer.on('call', (call) => {
 
 // Initiate outgoing connection
 let connect = () => {
-    let youId = youEl.value;
-	
+    let youId = youEl.value;	
     logMessage(`Connecting to ${youId}...`);
 
     let conn = peer.connect(peerId);

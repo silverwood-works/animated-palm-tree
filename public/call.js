@@ -56,7 +56,7 @@ let connect = () => {
     let youId = youEl.value;	
     logMessage(`Connecting to ${youId}...`);
 
-    let conn = peer.connect(peerId);
+    let conn = peer.connect(youId);
     conn.on('data', (data) => {
 	logMessage(`received: ${data}`);
     });

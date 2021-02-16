@@ -6,7 +6,7 @@
 <body>
 <div id="call"></div>
 <script>
-var socket = new JsSIP.WebSocketInterface('wss://vango.me:10444');
+var socket = new JsSIP.WebSocketInterface('wss://vango.me');
 var configuration = {
     sockets: [ socket ],
     uri: 'sip:<%= params[:from] %>@vango.me',

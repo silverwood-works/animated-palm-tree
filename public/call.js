@@ -51,7 +51,7 @@ peer.on('call', (call) => {
 });
 
 // Initiate outgoing connection
-let connectToPeer = () => {
+let connect = () => {
     let youId = youEl.value;
 	
     logMessage(`Connecting to ${youId}...`);

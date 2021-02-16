@@ -3,20 +3,20 @@ var socket = new JsSIP.WebSocketInterface('wss://vango.me');
 var configuration = {
     sockets: [ socket ],
     uri: 'sip:<%= params[:from] %>@vango.me',
-    password: 'mypassword',
+    password: 'mypassword'
 };
 var coolPhone = new JsSIP.UA(configuration);
-coolPhone.on('connected', function(e) {  });
-coolPhone.on('disconnected', function(e) {  });
-coolPhone.on('newRTCSession', function(e) {  });
-coolPhone.on('newMessage', function(e) {  });
-coolPhone.on('registered', function(e) {  });
-coolPhone.on('unregistered', function(e) {  });
-coolPhone.on('registrationFailed', function(e) {  });
+coolPhone.on('connected', function(e) { console.log(e); });
+coolPhone.on('disconnected', function(e) { console.log(e); });
+coolPhone.on('newRTCSession', function(e) { console.log(e); });
+coolPhone.on('newMessage', function(e) { console.log(e); });
+coolPhone.on('registered', function(e) { console.log(e); });
+coolPhone.on('unregistered', function(e) { console.log(e); });
+coolPhone.on('registrationFailed', function(e) { console.log(e); });
 coolPhone.start();
 
 var events = {
-    'succeeded': function() { console.log(e) },
+    'succeeded': function(e) { console.log(e); },
     'progress': function(e) { console.log(e); },
     'failed': function(e) { console.log(e); },
     'ended': function(e) { console.log(e); },
